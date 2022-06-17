@@ -1,0 +1,221 @@
+{
+	"info": {
+		"_postman_id": "19f1a4c7-20bb-4635-b2dd-cfaab07e39ce",
+		"name": "Students",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19244707"
+	},
+	"item": [
+		{
+			"name": "saveStudentsCsv",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/is185096/OneDrive - NCR Corporation/Desktop/Test.csv"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://localhost:7021/api/Students/saveStudentsCsv",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7021",
+					"path": [
+						"api",
+						"Students",
+						"saveStudentsCsv"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SaveStudentsJsonAllFields",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n  {\r\n    \"userId\": \"555\",\r\n    \"firstName\": \"Chandler\",\r\n    \"middleName\": \"Muriel\",\r\n    \"lastName\": \"Bing\",\r\n    \"phone\": \"5555555\",\r\n    \"studentId\": \"122/2017\",\r\n    \"parent\": {\r\n      \"firstName\": \"Charles\",\r\n      \"middleName\": \"Jack\",\r\n      \"lastName\": \"Bing\",\r\n      \"phone\": \"6787878\"\r\n    },\r\n    \"note\":\"Hi, I am Chandler. I make jokes when I am uncomfortable.\"\r\n  }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7021/api/Students/SaveStudentsJson",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7021",
+					"path": [
+						"api",
+						"Students",
+						"SaveStudentsJson"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SaveStudentsJsonEmptyList",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n  \r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7241/api/Students/SaveStudentsJson",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7241",
+					"path": [
+						"api",
+						"Students",
+						"SaveStudentsJson"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SaveStudentsJsonAllFieldsList",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n {\r\n    \"userId\": \"123\",\r\n    \"firstName\": \"Rachel\",\r\n    \"middleName\": \"Karen\",\r\n    \"lastName\": \"Green\",\r\n    \"phone\": \"123456789\",\r\n    \"studentId\": \"61/2017\",\r\n    \"parent\": {\r\n      \"firstName\": \"Leonard\",\r\n      \"middleName\": \"Barry\",\r\n      \"lastName\": \"Green\",\r\n      \"phone\": \"444555666\"\r\n    },\r\n    \"note\":\"We were not on a break!\"\r\n  },\r\n   {\r\n    \"userId\": \"555\",\r\n    \"firstName\": \"Chandler\",\r\n    \"middleName\": \"Muriel\",\r\n    \"lastName\": \"Bing\",\r\n    \"phone\": \"5555555\",\r\n    \"studentId\": \"122/2017\",\r\n    \"parent\": {\r\n      \"firstName\": \"Charles\",\r\n      \"middleName\": \"Jack\",\r\n      \"lastName\": \"Bing\",\r\n      \"phone\": \"6787878\"\r\n    },\r\n    \"note\":\"Hi, I am Chandler. I make jokes when I am uncomfortable.\"\r\n  }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7021/api/Students/SaveStudentsJson",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7021",
+					"path": [
+						"api",
+						"Students",
+						"SaveStudentsJson"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SaveStudentsJsonNoParentMiddleName",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n  {\r\n    \"userId\": \"123\",\r\n    \"firstName\": \"Ross\",\r\n    \"middleName\": \"Jack\",\r\n    \"lastName\": \"Geller\",\r\n    \"phone\": \"789789789\",\r\n    \"studentId\": \"150/2017\",\r\n    \"parent\": {\r\n      \"firstName\": \"Jack\",\r\n      \"lastName\": \"Geller\",\r\n      \"phone\": \"444555666\"\r\n    },\r\n    \"note\": \"We were on a break!\"\r\n  }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7021/api/Students/SaveStudentsJson",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7021",
+					"path": [
+						"api",
+						"Students",
+						"SaveStudentsJson"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "saveStudentsNoParent",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n   {\r\n    \"userId\": \"123\",\r\n    \"firstName\": \"Ross\",\r\n    \"middleName\": \"Jack\",\r\n    \"lastName\": \"Geller\",\r\n    \"phone\": \"789789789\",\r\n    \"studentId\": \"150/2017\",\r\n    \"note\": \"We were on a break!\"\r\n  }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7021/api/Students/SaveStudentsJson",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7021",
+					"path": [
+						"api",
+						"Students",
+						"SaveStudentsJson"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "saveStudentsNoNote",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n  {\r\n    \"userId\": \"123\",\r\n    \"firstName\": \"Rachel\",\r\n    \"middleName\": \"Karen\",\r\n    \"lastName\": \"Green\",\r\n    \"phone\": \"123456789\",\r\n    \"studentId\": \"61/2017\",\r\n    \"parent\": {\r\n      \"firstName\": \"Leonard\",\r\n      \"middleName\": \"Barry\",\r\n      \"lastName\": \"Green\",\r\n      \"phone\": \"444555666\"\r\n    }\r\n  },\r\n  {\r\n    \"userId\": \"555\",\r\n    \"firstName\": \"Chandler\",\r\n    \"middleName\": \"Muriel\",\r\n    \"lastName\": \"Bing\",\r\n    \"phone\": \"5555555\",\r\n    \"studentId\": \"122/2017\",\r\n    \"parent\": {\r\n      \"firstName\": \"Charles\",\r\n      \"middleName\": \"Jack\",\r\n      \"lastName\": \"Bing\",\r\n      \"phone\": \"6787878\"\r\n    }\r\n  }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7021/api/Students/SaveStudentsJson",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7021",
+					"path": [
+						"api",
+						"Students",
+						"SaveStudentsJson"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
