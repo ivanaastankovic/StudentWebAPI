@@ -138,9 +138,9 @@ namespace StudentsWebAPI.Controllers
                                 LastName = csv.GetField<string>(11),
                                 Phone = csv.GetField<string>(12)
                             });
+                            student.Note = csv.GetField<string>(13);
                         }
-                        student.Note = csv.GetField<string>(13);
-
+                        student.Note = csv.GetField<string>(10);
                     }
                     else
                     {
