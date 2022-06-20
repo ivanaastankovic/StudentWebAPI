@@ -127,12 +127,18 @@ namespace StudentsWebAPI.Controllers
                     // parsing private schools data
                     else if (records.Count() == 14)
                     {
-                        student.Parents.Add(new Parent()
+                        bool anotherParentValidation = ValidationHelper.IsNullOrEmpty(csv.GetField<string>(10)) ||
+                            ValidationHelper.IsNullOrEmpty(csv.GetField<string>(11)) ||
+                            ValidationHelper.IsNullOrEmpty(csv.GetField<string>(12));
+                        if (!anotherParentValidation)
                         {
-                            FirstName = csv.GetField<string>(10),
-                            LastName = csv.GetField<string>(11),
-                            Phone = csv.GetField<string>(12)
-                        });
+                            student.Parents.Add(new Parent()
+                            {
+                                FirstName = csv.GetField<string>(10),
+                                LastName = csv.GetField<string>(11),
+                                Phone = csv.GetField<string>(12)
+                            });
+                        }
                         student.Note = csv.GetField<string>(13);
 
                     }
@@ -150,7 +156,7 @@ namespace StudentsWebAPI.Controllers
                         || ValidationHelper.IsNullOrEmpty(student.Address)
                         || student.Parents == null
                         || student.Parents.Count() == 0
-                        || student.Parents.Any(s =>
+                        || student.Parents.All(s =>
                                       ValidationHelper.IsNullOrEmpty(s.FirstName)
                                    || ValidationHelper.IsNullOrEmpty(s.LastName)
                                    || ValidationHelper.IsNullOrEmpty(s.Phone));
